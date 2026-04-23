@@ -12,3 +12,4 @@ wheels/
 media/
 *.mo
 *.sqlite3
+*.txt
