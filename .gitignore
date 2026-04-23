@@ -11,3 +11,4 @@ wheels/
 .DS_Store
 media/
 *.mo
+*.sqlite3
