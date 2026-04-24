@@ -7,6 +7,10 @@ requires-python = ">=3.12"
 dependencies = [
     "django~=5.0.4",
     "django-braces==1.15.0",
-    "django-embed-video==1.4.9",
+    "django-debug-toolbar==4.3.0",
+    "django-embed-video>=1.4.10",
+    "django-redisboard>=9.0.0",
     "pillow==10.3.0",
+    "pymemcache==4.0.0",
+    "redis==5.0.4",
 ]

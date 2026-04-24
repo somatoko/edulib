@@ -1,7 +1,10 @@
 {% extends "base.html" %}
+{% load cache %}
+
 {% block title %}
   {{ object.title }}
 {% endblock %}
+
 {% block content %}
   <h1>
     {{ module.title }}
@@ -25,6 +28,7 @@
     </ul>
   </div>
   <div class="module">
+    {% cache 600 module_contents module %}
     {% for content in module.contents.all %}
       {% with item=content.item %}
         <h2>{{ item.title }}</h2>
