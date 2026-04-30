@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'courses.apps.CoursesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -86,6 +87,7 @@ REST_FRAMEWORK = {
 }
 
 WSGI_APPLICATION = 'educa.wsgi.application'
+ASGI_APPLICATION = 'educa.asgi.application'
 
 
 # Database
@@ -161,3 +163,11 @@ CACHE_MIDDLEWARE_KEY_PREFIX = 'edulib'
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379)],
+        },
+}, }
